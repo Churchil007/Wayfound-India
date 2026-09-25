@@ -1,0 +1,574 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f0e6;
+    color: #17202a;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.top-header {
+    min-height: 105px;
+    padding: 18px 35px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #faf8f1;
+    border-bottom: 1px solid #ddd6c6;
+}
+
+.top-header h1 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 34px;
+}
+
+.top-header p {
+    margin: 5px 0 0;
+    color: #77756d;
+    font-size: 15px;
+}
+
+.statistics {
+    display: flex;
+    gap: 15px;
+}
+
+.stat {
+    min-width: 110px;
+    padding: 10px 18px;
+    text-align: center;
+
+    background: white;
+    border: 1px solid #ddd6c6;
+    border-radius: 12px;
+}
+
+.stat strong {
+    display: block;
+    font-size: 24px;
+}
+
+.stat span {
+    color: #777;
+    font-size: 13px;
+}
+
+/* ============================================================
+   CONTROLS
+============================================================ */
+
+.controls {
+    padding: 13px 35px;
+
+    background: #faf8f1;
+    border-bottom: 1px solid #ddd6c6;
+}
+
+.search-box {
+    width: 330px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0 15px;
+
+    background: #eee8d9;
+    border: 1px solid #d9d0bd;
+    border-radius: 8px;
+}
+
+.search-box span {
+    font-size: 26px;
+    color: #777;
+}
+
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+}
+
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.category-btn {
+    border: 1px solid #d8d0bf;
+    background: #faf8f1;
+
+    padding: 9px 15px;
+
+    border-radius: 22px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+.category-btn:hover {
+    background: #eee8d9;
+}
+
+.category-btn.active {
+    background: #102a2c;
+    color: white;
+}
+
+
+/* ============================================================
+   DOT COLORS
+============================================================ */
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.all-dot {
+    background: #c99528;
+}
+
+.museum {
+    background: #2677e8;
+}
+
+.gallery {
+    background: #e83991;
+}
+
+.fort {
+    background: #f36d18;
+}
+
+.palace {
+    background: #8a4de8;
+}
+
+.temple {
+    background: #249b50;
+}
+
+.mosque {
+    background: #168f8b;
+}
+
+.church {
+    background: #e7a900;
+}
+
+.monument {
+    background: #d82d2d;
+}
+
+.heritage {
+    background: #974512;
+}
+
+.historic {
+    background: #34485f;
+}
+
+.other {
+    background: #728096;
+}
+
+
+/* ============================================================
+   MAIN
+============================================================ */
+
+.main-container {
+    height: calc(100vh - 205px);
+
+    display: grid;
+
+    grid-template-columns:
+        275px
+        minmax(500px, 1fr)
+        360px;
+
+    gap: 0;
+}
+
+
+/* ============================================================
+   LEFT PANEL
+============================================================ */
+
+.left-panel {
+    overflow-y: auto;
+
+    padding: 22px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border-right: 1px solid #ddd6c6;
+}
+
+.left-panel h2 {
+    margin-top: 0;
+    font-family: Georgia, serif;
+}
+
+.left-panel h3 {
+    margin-bottom: 12px;
+}
+
+.journey-row {
+    display: grid;
+    grid-template-columns: 25px 1fr auto;
+
+    align-items: center;
+
+    margin: 15px 0;
+
+    color: #46515a;
+}
+
+.journey-row strong {
+    color: #111;
+}
+
+.left-panel button {
+    width: 100%;
+
+    padding: 10px;
+
+    margin-bottom: 5px;
+
+    text-align: left;
+
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+}
+
+.left-panel button:hover {
+    background: #eee8d9;
+}
+
+.left-panel hr {
+    border: none;
+    border-top: 1px solid #ddd6c6;
+    margin: 20px 0;
+}
+
+.legend-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 9px 0;
+
+    font-size: 14px;
+}
+
+.legend-marker {
+    width: 15px;
+    height: 15px;
+
+    border-radius: 50%;
+}
+
+.not-visited {
+    background: #2879d8;
+}
+
+.visited {
+    background: #249b50;
+}
+
+
+/* ============================================================
+   MAP
+============================================================ */
+
+.map-wrapper {
+    position: relative;
+
+    background: #ddd;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+.map-message {
+    position: absolute;
+
+    z-index: 500;
+
+    top: 15px;
+    right: 15px;
+
+    padding: 12px 20px;
+
+    background: white;
+
+    border-radius: 7px;
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+
+    font-size: 13px;
+}
+
+
+/* ============================================================
+   MARKERS
+============================================================ */
+
+.custom-marker {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50% 50% 50% 0;
+
+    transform: rotate(-45deg);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 3px solid white;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.custom-marker span {
+    transform: rotate(45deg);
+    color: white;
+    font-size: 13px;
+}
+
+.custom-marker.visited-marker {
+    background: #249b50 !important;
+}
+
+.marker-museum {
+    background: #2677e8;
+}
+
+.marker-gallery {
+    background: #e83991;
+}
+
+.marker-fort {
+    background: #f36d18;
+}
+
+.marker-palace {
+    background: #8a4de8;
+}
+
+.marker-temple {
+    background: #249b50;
+}
+
+.marker-mosque {
+    background: #168f8b;
+}
+
+.marker-church {
+    background: #e7a900;
+}
+
+.marker-monument {
+    background: #d82d2d;
+}
+
+.marker-heritage {
+    background: #974512;
+}
+
+.marker-historic {
+    background: #34485f;
+}
+
+.marker-other {
+    background: #728096;
+}
+
+
+/* ============================================================
+   DETAILS PANEL
+============================================================ */
+
+.details-panel {
+    overflow-y: auto;
+
+    padding: 20px;
+
+    background: #faf8f1;
+
+    border-left: 1px solid #ddd6c6;
+}
+
+.empty-details {
+    text-align: center;
+
+    margin-top: 100px;
+
+    color: #777;
+}
+
+.empty-icon {
+    font-size: 45px;
+}
+
+.site-image {
+    width: 100%;
+    height: 200px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+.details-panel h2 {
+    font-family: Georgia, serif;
+    font-size: 25px;
+}
+
+.location {
+    color: #53616b;
+    margin-bottom: 12px;
+}
+
+.category-label {
+    display: inline-block;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: #249b50;
+
+    color: white;
+
+    font-size: 13px;
+}
+
+.description {
+    line-height: 1.6;
+    color: #555;
+}
+
+.info-row {
+    display: flex;
+
+    gap: 12px;
+
+    padding: 9px 0;
+
+    border-bottom: 1px solid #e1dccf;
+}
+
+.info-label {
+    width: 90px;
+    color: #777;
+}
+
+.info-value {
+    flex: 1;
+}
+
+.visited-button {
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #249b50;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.visited-button:hover {
+    background: #197d3e;
+}
+
+.visited-button.already-visited {
+    background: #dcefe3;
+    color: #197d3e;
+    cursor: default;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 1000px) {
+
+    .main-container {
+        grid-template-columns:
+            210px
+            1fr;
+    }
+
+    .details-panel {
+        display: none;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .top-header {
+        display: block;
+    }
+
+    .statistics {
+        margin-top: 15px;
+    }
+
+    .main-container {
+        display: block;
+        height: auto;
+    }
+
+    .left-panel {
+        display: none;
+    }
+
+    .map-wrapper {
+        height: 65vh;
+    }
+
+}
